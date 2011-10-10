@@ -18,7 +18,7 @@ ERRTEMP=`mktemp`
 
 T=`date +'%Y-%m-%dT%H:%M:%S'`
 
-ping -q -c 1 $TARGET_IP 1> $TEMP  2> $ERRTEMP
+ping -q -c 10 $TARGET_IP 1> $TEMP  2> $ERRTEMP
 if grep unreachable $ERRTEMP; then
 	echo $T 100 -1 -1 >> $FILE
 else
